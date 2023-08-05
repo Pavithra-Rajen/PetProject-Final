@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap-5.0.2-dist/css/bootstrap.min.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>{{petstore.breed}}</h1>
+        <ul>
+            <li>{{petstore.name}}</li>
+            <img height="200px" class="card-img-top" src="{{petstore.image.url}}" alt="image cap"/>
+            <li>{{petstore.age}}</li>
+            <li>{{petstore.description}}</li>
+            <li>{{petstore.price}}</li>
+            
+        </ul>
+        <a href="/update/{{petstore.id}}" class="btn btn-success">Update</a>
+        <a href="/delete/{{petstore.id}}" class="btn btn-danger">Delete</a>
+    </div>
+</body>
+</html>

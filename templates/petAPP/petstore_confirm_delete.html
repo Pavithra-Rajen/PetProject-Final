@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap-5.0.2-dist/css/bootstrap.min.css' %}">
+</head>
+<body>
+    <h1>conformation of deletion of book is : {{petstore.title}}</h1>
+    <form method="POST">
+        {% csrf_token %}
+
+        <input type="submit" class="btn btn-danger" value=delete>
+        <a href="/" class="btn btn-success" >cancel</a>
+    </form>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap-5.0.2-dist/css/bootstrap.min.css'%}">  
+    <title>Document</title>
+</head>
+<body>
+    <h1>insert or update the records</h1>
+    <form method="POST">
+        {{form.as_p}}
+        <!-- {{newbook.id}} -->
+        {% csrf_token %}
+        <input type="submit" value="Insert/Update">
+    </form>
+</body>
+</html>

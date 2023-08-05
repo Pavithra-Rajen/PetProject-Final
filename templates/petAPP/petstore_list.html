@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap-5.0.2-dist/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Document</title>
+</head>
+<body bgcolor="blue">
+    <h1><b><center>WELCOME TO PAVITHRA PETSTORE</center></b></h1>
+    <h4><center>The best therapist has four legs and a loyal heart</center></h4>
+    {% comment %} <div class="container">
+        <h1 class="text-center">
+            Book Details
+        </h1>
+        {% for pet in pet_list %}
+        <a href="/{{pet.id}}">{{pet.name}} <br></a>
+        {% endfor %}
+        <a href="/create" class="btn btn-success">insert new records</a> 
+    </div> {% endcomment %}
+
+    <!-- <div class="container">
+        <div class="row">
+    <div class="col-lg-3">
+        <div class="card pb-2px" >
+            <div class="card-body">
+                {% for pet in pet_list %}
+                <a href="{{pet.id}}">
+                <img height="200px" class="card-img-top" src="{{pet.image.url}}" alt="image"/>
+                <p class="car-text">{{pet.name}}</p>
+             <p>Price <b>${{obj.price}}</b></p></a>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+</div> -->
+
+<div class="container">
+    <div class="row">
+{% for pet in petstore_list %}
+{% csrf_token %}
+<div class="card" style="width: 18rem;">
+    <!-- <img src="{{pet.image.url}}" class="card-img-top" alt="..."> -->
+    <div class="card-body">
+      <h5 class="card-title">{{pet.name}}</h5>
+      <img height="200px" class="card-img-top" src="{{pet.image.url}}" alt="image cap"/>
+      <p class="card-text"></p>
+      <a href="{{pet.id}}" class="btn btn-primary">details</a>
+    </div>
+  </div>
+  {% endfor %}  
+  <a href="/create" class="btn btn-success">insert new records</a>                                                                                                                                         
+</div>
+</div>
+</body>
+</html>
